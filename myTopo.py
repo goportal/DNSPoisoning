@@ -23,19 +23,19 @@ class MyTopo( Topo ):
         dns2 = self.addHost( 'dns2' )
 
         sw1 = self.addSwitch( 'sw1' )
-        sw2 = self.addSwitch( 'sw2' )
+#        sw2 = self.addSwitch( 'sw2' )
 
         # Add links
-        self.addLink( sw1, sw2 )
+ #       self.addLink( sw1, sw2 )
 
         self.addLink( sw1, h1 )
         self.addLink( sw1, h2 )
         
         self.addLink( sw1, dns1 )
 
-        self.addLink( sw2, se1 )
-        self.addLink( sw2, se2 )
+        self.addLink( sw1, se1 )
+        self.addLink( sw1, se2 )
 
-        self.addLink( sw2, dns2 )
+        self.addLink( sw1, dns2 )
         
 topos = { 'mytopo': ( lambda: MyTopo() ) }
